@@ -10,8 +10,6 @@ export default function Navbar() {
               Bringer <span className="text-[#027FFA]">Blog</span>
             </h1>
           </Link>
-
-          
         </div>
       </div>
     </div>
