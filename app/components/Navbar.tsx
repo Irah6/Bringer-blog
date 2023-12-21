@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Themebutton from "./ThemeButton";
 
 export default function Navbar() {
   return (

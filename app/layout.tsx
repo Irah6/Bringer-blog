@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Navbar from './components/Navbar'
-import { Providers } from './components/Providers'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -19,11 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><link rel="shortcut icon" href="/bringer.svg"  /></head>
-      <body className={` ${inter.className} bg-white text-black dark:bg-gray-900 dark:selection:bg-gray-900 dark:text-white h-full selection:bg-gray-50`}>
-        <Providers>
+      <body className={` ${inter.className} bg-white text-black  h-full selection:bg-gray-50`}>
         <Navbar/>
         <main className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8'>{children}</main>
-        </Providers>
         </body>
     </html>
   )
