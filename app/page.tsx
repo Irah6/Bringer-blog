@@ -26,7 +26,7 @@ export default async function IndexPage() {
           <li key={post._id} className="py-4">
             <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
               <div>
-                <p className="text-base font-medium leading-6 text-teal-500">
+                <p className="text-base font-medium leading-6 text-[#0181FC]">
                   {new Date(post._createdAt).toISOString().split("T")[0]}
                 </p>
               </div>
