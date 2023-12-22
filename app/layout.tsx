@@ -15,13 +15,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const isStudio = typeof window !== 'undefined' && window.location.pathname.includes('/studio')
-  const shouldRenderNavbar = typeof window !== 'undefined' && !isStudio
   return (
     <html lang="en">
       <head><link rel="shortcut icon" href="/bringer.svg"  /></head>
       <body className={` ${inter.className} bg-white text-black  h-full selection:bg-gray-50`}>
-        {shouldRenderNavbar ? <Navbar/> : null}
+        <Navbar/>
         <main>{children}</main>
       </body>
     </html>
