@@ -20,15 +20,48 @@ export default async function SlugPage({
 
   const PortableTextComponent = {
     types: {
-      image: ({ value }: { value: any }) => (
+      image: ({ value }:any ) => (
         <Image
           src={urlFor(value).url()}
-          alt="Image"
-          className="rounded-lg"
+          alt={value.alt || ' '}
+          loading="lazy"
+          className="object-contain"
           width={800}
           height={800}
         />
       ),
+    },
+    marks: {
+      // Ex. 1: custom renderer for the em / italics decorator
+      em: ({children}:any) => <em className="text-gray-600 font-semibold">{children}</em>,
+  
+      // Ex. 2: rendering a custom `link` annotation
+      link: ({children, value}:any) => {
+        const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+        return (
+          <a href={value.href} rel={rel}>
+            {children}
+          </a>
+        )
+      },
+    },
+    block: {
+      // Ex. 1: customizing common block types
+      h1: ({children}:any) => <h1 className="text-2xl">{children}</h1>,
+      blockquote: ({children}:any) => <blockquote className="border-l-purple-500">{children}</blockquote>,
+  
+      // Ex. 2: rendering custom styles
+      customHeading: ({children}:any) => (
+        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
+      ),
+    },
+    list: {
+      // Ex. 1: customizing common list types
+      bullet: ({children}:any) => <ul className="mt-xl">{children}</ul>,
+      number: ({children}:any) => <ol className="mt-lg">{children}</ol>,
+  
+      // Ex. 2: rendering custom lists
+      checkmarks: ({children}:any) => <ol className="m-auto text-lg">{children}</ol>,
     },
   };
 
@@ -58,7 +91,7 @@ export default async function SlugPage({
           <div className="prose max-w-none pb-8 pt-10  prose-lg">
             <PortableText
               value={data?.content}
-              components={PortableTextComponent}
+              components={PortableTextComponent} onMissingComponent={false}
             />
           </div>
         </div>
