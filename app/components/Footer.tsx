@@ -9,7 +9,7 @@ function Footer() {
             <a href="https://bringerapp.com">Bringer</a>
         </div>
         <div className='text-lg hidden sm:block font-Figtree  text-white '>
-            The Professional's Choice
+            The Professional&apos; Choice
         </div>
         <div className=" flex gap-3 ">
         <a href="https://bringerapp.com" >
