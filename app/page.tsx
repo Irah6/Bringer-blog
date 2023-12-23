@@ -3,7 +3,7 @@ import { Post } from "./lib/interface";
 import { client } from "./lib/client";
 
 async function getData() {
-  const query = `*[_type == "post"]`;
+  const query = `*[_type == "post"] | order(_createdAt asc)`;
 
   const data = await client.fetch(query);
 
