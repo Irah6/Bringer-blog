@@ -3,7 +3,7 @@ import { client } from "@/app/lib/client";
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-
+export const revalidate=10
 async function getData(slug: string) {
   const query = `*[_type == "post" && slug.current == "${slug}"][0]`;
 
@@ -46,8 +46,7 @@ export default async function SlugPage({
       },
     },
     block: {
-      // Ex. 1: customizing common block types
-      h1: ({children}:any) => <h1 className="text-2xl">{children}</h1>,
+
       blockquote: ({children}:any) => <blockquote className="border-l-purple-500">{children}</blockquote>,
   
       // Ex. 2: rendering custom styles

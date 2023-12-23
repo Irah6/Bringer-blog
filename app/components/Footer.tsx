@@ -1,5 +1,7 @@
-import React from 'react'
-
+import Image from 'next/image'
+import bringer from '../../public/bringer.svg'
+import instagram from '../../public/LogoInstagram.svg'
+import linkedin from '../../public/LogoLinkedIn.svg'
 function Footer() {
   return (
     <div className="flex  items-center bg-black text-center py-5 mt-2">
@@ -13,13 +15,13 @@ function Footer() {
         </div>
         <div className=" flex gap-3 ">
         <a href="https://bringerapp.com" >
-            <img src="./bringer.svg" alt="Instagram Icon" className="h-5 w-5" />
+            <Image src={bringer} alt="Instagram Icon" className="h-5 w-5" />
           </a>
           <a href="https://www.instagram.com/bringer.ai/" >
-            <img src="./LogoInstagram.svg" alt="Instagram Icon" className="h-5 w-5" />
+            <Image src={instagram} alt="Instagram Icon" className="h-5 w-5" />
           </a>
           <a href="https://www.linkedin.com/company/bringer-ai/" >
-            <img src="./LogoLinkedIn.svg" alt="LinkedIn Icon" className="h-5 w-5" />
+            <Image src={linkedin} alt="LinkedIn Icon" className="h-5 w-5" />
           </a>
         </div>
       </div>
