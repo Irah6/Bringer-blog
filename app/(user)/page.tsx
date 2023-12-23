@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Post } from "./lib/interface";
-import { client } from "./lib/client";
+import { Post } from "../lib/interface";
+import { client } from "../lib/client";
 
 async function getData() {
   const query = `*[_type == "post"] | order(_createdAt desc)`;
