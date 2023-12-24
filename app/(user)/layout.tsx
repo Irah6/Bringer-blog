@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><link rel="shortcut icon" href="/bringer.svg"  /></head>
+      <meta name="google-site-verification" content="xbO83D4f_8OXMLQ1RpQ8YO4JFqr-TfU1gnXkGoFWZnA" />
       <body className={` ${inter.className} bg-white text-black  h-full selection:bg-gray-50`}>
         <Navbar/>
         <Image className="m-auto object-contain" loading="lazy" src={frame3} alt="cover-image"  />
