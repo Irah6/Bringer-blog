@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Inter } from 'next/font/google'
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Navbar/>
         <Image className="m-auto object-contain" loading="lazy" src={frame3} alt="cover-image"  />
         <main>{children}</main>
+        <Analytics />
         <Footer/>
       </body>
     </html>
