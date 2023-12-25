@@ -10,8 +10,14 @@ import '.././styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bringer-blog',
-  description: 'Ai photography',
+  title:
+  {default: 'Bringer-blog | Powered by Bringer',
+  template:"%s-by Bringer-blog"
+},
+  description: 'Ai photography blog using face recognition to make photo distribution easier reverse face search',
+  twitter:{
+    card:"summary_large_image"
+  }
 }
 
 export default function RootLayout({
@@ -23,7 +29,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head><link rel="shortcut icon" href="/bringer.svg"  /></head>
       <meta name="google-site-verification" content="xbO83D4f_8OXMLQ1RpQ8YO4JFqr-TfU1gnXkGoFWZnA" />
       <body className={` ${inter.className} bg-white text-black  h-full selection:bg-gray-50`}>
         <Navbar/>
