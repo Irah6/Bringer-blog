@@ -11,7 +11,14 @@ async function getData(slug: string) {
   const data = await client.fetch(query);
   return data;
 }
+export const revalidate=10
+export async function generateStaticParams()
+{
+  const query = `*[_type == "post"] | order(_createdAt desc)`;
 
+  const data:Post[] = await client.fetch(query);
+  return data.map((slug)=>slug.slug.current);
+}
 export async function generateMetadata({
   params,
 }: {

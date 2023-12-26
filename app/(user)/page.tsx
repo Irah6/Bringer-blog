@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Post } from "../lib/interface";
 import { client } from "../lib/client";
-
+export const revalidate=10
 async function getData() {
   const query = `*[_type == "post"] | order(_createdAt desc)`;
 
