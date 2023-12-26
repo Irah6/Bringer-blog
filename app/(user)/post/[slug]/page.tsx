@@ -2,6 +2,7 @@ import { Post } from "@/app/lib/interface";
 import { client } from "@/app/lib/client";
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
+import { MetadataRoute } from "next"
 import Image from "next/image";
 export const revalidate=10
 async function getData(slug: string) {
@@ -11,6 +12,37 @@ async function getData(slug: string) {
   return data;
 }
 
+export async function generateStaticParams()
+{
+  const query = `*[_type == "post"] | order(_createdAt desc)`;
+
+  const data:Post[] = await client.fetch(query);
+  return data.map((slug)=>slug.slug.current);
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}){
+  const data = (await getData(params.slug)) as Post;
+  if (!data) {
+    return {
+        title: 'Post Not Found',
+        description:"Check some other posts"
+    }
+}
+  return{
+    title:data.title,
+    description:data.overview,
+    alternates: {
+      canonical:`/post/${data.slug.current}`,
+      languages:{
+        "en-US":`/en-US/post/${data.slug.current}`,
+        "de-DE":`/de-DE/post/${data.slug.current}`,
+      },
+    }
+  }
+}
 export default async function SlugPage({
   params,
 }: {
