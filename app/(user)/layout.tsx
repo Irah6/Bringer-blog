@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${inter.className} bg-white text-black  h-full selection:bg-gray-50`}>
         <Navbar/>
-        <Image className="m-auto object-contain"  src={frame3} alt="cover-image"  />
+        <Image className="m-auto object-contain" loading="eager" src={frame3} alt="cover-image"  />
         <main>{children}</main>
         <Analytics />
         <Footer/>

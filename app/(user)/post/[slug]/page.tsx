@@ -4,7 +4,7 @@ import { urlFor } from "@/app/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
 import { MetadataRoute } from "next"
 import Image from "next/image";
-export const revalidate=10
+
 async function getData(slug: string) {
   const query = `*[_type == "post" && slug.current == "${slug}"][0]`;
 
@@ -57,7 +57,7 @@ export default async function SlugPage({
           src={urlFor(value).url()}
           alt={value.alt || ' '}
           loading="lazy"
-          className="object-contain"
+          className="object-cover"
           width={800}
           height={800}
         />
