@@ -36,10 +36,6 @@ export async function generateMetadata({
     description:data.overview,
     alternates: {
       canonical:`/post/${data.slug.current}`,
-      languages:{
-        "en-US":`/en-US/post/${data.slug.current}`,
-        "de-DE":`/de-DE/post/${data.slug.current}`,
-      },
     }
   }
 }

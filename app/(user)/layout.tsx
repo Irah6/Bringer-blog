@@ -18,10 +18,6 @@ export const metadata: Metadata = {
   description: 'Ai photography blog using face recognition to make photo distribution easier reverse face search',
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-      'de-DE': '/de-DE',
-    },
   },
   twitter:{
     card:"summary_large_image"
