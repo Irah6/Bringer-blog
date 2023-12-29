@@ -26,11 +26,6 @@ export default async function og({ params }: { params: { slug: string } }) {
             {/* Overlay */}
             <div tw="absolute flex inset-0 bg-black bg-opacity-50" />
           </div>
-          <div tw="flex flex-col text-neutral-50">
-            {/* Title */}
-            <div tw="text-7xl font-bold">{post?.title}</div>
-            {/* Tags */}
-          </div>
         </div>
       ),
       size
