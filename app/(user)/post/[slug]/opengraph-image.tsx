@@ -23,8 +23,6 @@ export default async function og({ params }: { params: { slug: string } }) {
               src={urlFor(post?.meta).url()} 
               alt={post?.title!!}
             />
-            {/* Overlay */}
-            <div tw="absolute flex inset-0 bg-black bg-opacity-50" />
           </div>
         </div>
       ),
