@@ -22,6 +22,17 @@ export default {
       },
     },
     {
+      name:'meta',
+      type: 'image',
+      fields: [
+        {
+          type: 'text',
+          name: 'alt',
+          title: 'Alternative Text',
+        },
+      ],
+    },
+    {
       name: 'content',
       type: 'array',
       title: 'Content',
